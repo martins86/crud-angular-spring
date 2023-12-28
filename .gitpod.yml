@@ -1,6 +1,6 @@
 # Imagem Docker
 image:
-  file: .gitpod.Dockerfile
+  # file: .gitpod.Dockerfile
 
 # Portas e Ações
 ports:
