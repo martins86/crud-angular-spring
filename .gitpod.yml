@@ -5,8 +5,7 @@ image:
 
 # Portas e Ações
 ports:
-  - name: Web App TMF Lab
-    description: study app
+  - name: localhost webApp
     port: 4200
     onOpen: open-browser
     visibility: public
@@ -16,4 +15,4 @@ tasks:
   - name: Setup, Install
     before: export NG_CLI_ANALYTICS=ci
     init: echo n | npm i -g @angular/cli@13.2.0
-    # command: npm install && npm run start
+    command: cd crud-angular && npm ci && npm run start
