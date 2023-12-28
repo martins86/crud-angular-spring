@@ -1,0 +1,19 @@
+---
+# Imagem Docker
+image:
+  file: .gitpod.Dockerfile
+
+# Portas e Ações
+ports:
+  - name: Web App TMF Lab
+    description: study app
+    port: 4200
+    onOpen: open-browser
+    visibility: public
+
+# Tarefas na Inicialização
+tasks:
+  - name: Setup, Install
+    before: export NG_CLI_ANALYTICS=ci
+    init: echo n | npm i -g @angular/cli@13.2.0
+    # command: npm install && npm run start
