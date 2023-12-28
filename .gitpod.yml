@@ -1,13 +1,1 @@
-# Imagem Docker
-image:
-  # file: .gitpod.Dockerfile
 
-# Portas e Ações
-ports:
-
-# Tarefas na Inicialização
-tasks:
-  # - name: Setup, Install
-  #   before: export NG_CLI_ANALYTICS=ci
-  #   init: echo n | npm i -g @angular/cli@13.2.0 && npm i -g commitizen
-  #   command: npm install && npm run start
