@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDefaultComponent } from './table-default.component';
 
-describe('Testes do TableDefaultComponent', () => {
+describe('Testes do TableDefaultComponent ', () => {
   let component: TableDefaultComponent;
   let fixture: ComponentFixture<TableDefaultComponent>;
 

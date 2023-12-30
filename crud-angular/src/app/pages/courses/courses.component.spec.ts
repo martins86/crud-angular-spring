@@ -19,7 +19,7 @@ describe('Testes do CoursesComponent ', () => {
     fixture.detectChanges();
   });
 
-  it('Deve instanciar CoursesComponent', () => {
+  it('Deve inicializar CoursesComponent', () => {
     expect(component).toBeTruthy();
   });
 });
