@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TableCrudCoursesModule } from 'src/app/shared/table-crud-courses/table-crud-courses.module';
+
+const shared = [TableCrudCoursesModule];
+
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses.component';
 
@@ -11,7 +15,8 @@ import { CoursesComponent } from './courses.component';
   ],
   imports: [
     CommonModule,
-    CoursesRoutingModule
+    CoursesRoutingModule,
+    ...shared
   ],
   exports: [
     CoursesComponent
