@@ -11,6 +11,10 @@ const material = [MatToolbarModule, MatButtonModule, MatIconModule];
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { CoursesModule } from './pages/courses/courses.module';
+
+const pages = [CoursesModule];
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +23,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ...material
+    ...material,
+    ...pages
   ],
   providers: [],
   bootstrap: [AppComponent]
