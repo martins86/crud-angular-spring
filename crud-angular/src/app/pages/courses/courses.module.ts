@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TableCrudCoursesModule } from 'src/app/shared/table-crud-courses/table-crud-courses.module';
+import { TableCrudCoursesModule } from 'src/app/shared/components/table-crud-courses/table-crud-courses.module';
 
 const shared = [TableCrudCoursesModule];
 

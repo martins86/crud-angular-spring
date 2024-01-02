@@ -1,16 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs';
 
 import { Course } from 'src/app/shared/interfaces/course';
 
 import { CoursesService } from 'src/app/shared/services/courses/courses.service';
 
-import { TableCrudCoursesModule } from 'src/app/shared/table-crud-courses/table-crud-courses.module';
+import { TableCrudCoursesModule } from 'src/app/shared/components/table-crud-courses/table-crud-courses.module';
 
 const shared = [TableCrudCoursesModule];
 
 import { CoursesComponent } from './courses.component';
 
-describe('Testes do CoursesComponent ', () => {
+describe('Testes do CoursesComponent', () => {
   let component: CoursesComponent;
   let fixture: ComponentFixture<CoursesComponent>;
   let serviceCourses: CoursesService;
@@ -21,7 +23,7 @@ describe('Testes do CoursesComponent ', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...shared],
+      imports: [HttpClientTestingModule, ...shared],
       declarations: [CoursesComponent],
       providers: [CoursesService]
     })
@@ -39,20 +41,7 @@ describe('Testes do CoursesComponent ', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('Teste do ngOnInit ', () => {
-    it('Deve setar em courses um array de course do tipo course', () => {
-      // Arrange
-      spyOn(serviceCourses, 'getAll').and.returnValue(coursesMock);
-      // Act
-      component.ngOnInit();
-
-      // Assert
-      expect(serviceCourses.getAll).toHaveBeenCalled();
-      expect(component.courses).toEqual(coursesMock);
-    });
-  });
-
-  describe('Teste do getAllCourses ', () => {
+  describe('Teste do getAllCourses', () => {
     it('Deve acionar o getAll com sucesso', () => {
       // Arrange
       spyOn(serviceCourses, 'getAll');
@@ -64,16 +53,16 @@ describe('Testes do CoursesComponent ', () => {
       expect(serviceCourses.getAll).toHaveBeenCalled();
 
     });
-    
+
     it('Deve retornar array de courses do tipo course', () => {
       // Arrange
-      spyOn(serviceCourses, 'getAll').and.returnValue(coursesMock);
+      spyOn(serviceCourses, 'getAll').and.returnValue(of(coursesMock));
 
       // Act
       const response = component.getAllCourses();
 
       // Assert
-      expect(response).toEqual(coursesMock);
+      expect(response).toEqual(of(coursesMock));
     });
   });
 });

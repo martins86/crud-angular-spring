@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, delay, first, tap } from 'rxjs';
+
 import { Course } from '../../interfaces/course';
 
 @Injectable({
@@ -6,12 +9,15 @@ import { Course } from '../../interfaces/course';
 })
 export class CoursesService {
 
-  coursesMock: Course[] = [
-    { id: '0', name: 'Angular', category: 'front-end' },
-    { id: '1', name: 'Spring', category: 'back-end' }
-  ];
+  private readonly apiUrlBase = '/assets/course.json';
 
-  getAll(): Course[] {
-    return this.coursesMock;
+  constructor(private httpClient: HttpClient) { }
+
+  getAll(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.apiUrlBase)
+      .pipe(
+        first(),
+        tap()
+      );
   }
 }
