@@ -6,3 +6,10 @@ table {
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 3px 4px 7px 0px rgba(0, 0, 0, 0.12);
 }
+
+.not-courses {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0;
+  justify-content: center;
+}
