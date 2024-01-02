@@ -9,6 +9,14 @@ ports:
     port: 4200
     onOpen: open-browser
     visibility: public
+  - name: GitPod
+    port: 5900
+    onOpen: ignore
+    visibility: public
+  - name: GitPod
+    port: 6080
+    onOpen: ignore
+    visibility: public
 
 # Tarefas na Inicialização
 tasks:
