@@ -40,21 +40,8 @@ describe('Testes do CoursesComponent ', () => {
   });
 
   describe('Teste do ngOnInit ', () => {
-    it('Deve acionar o getAll dentro do coursesService', () => {
-      // Arrange
-      spyOn(serviceCourses, 'getAll');
-
-      // Act
-      component.ngOnInit();
-
-      // Assert
-      expect(serviceCourses.getAll).toHaveBeenCalled();
-
-    });
-
     it('Deve setar em courses um array de course do tipo course', () => {
       // Arrange
-
       spyOn(serviceCourses, 'getAll').and.returnValue(coursesMock);
       // Act
       component.ngOnInit();
@@ -66,6 +53,18 @@ describe('Testes do CoursesComponent ', () => {
   });
 
   describe('Teste do getAllCourses ', () => {
+    it('Deve acionar o getAll com sucesso', () => {
+      // Arrange
+      spyOn(serviceCourses, 'getAll');
+
+      // Act
+      component.getAllCourses();
+
+      // Assert
+      expect(serviceCourses.getAll).toHaveBeenCalled();
+
+    });
+    
     it('Deve retornar array de courses do tipo course', () => {
       // Arrange
       spyOn(serviceCourses, 'getAll').and.returnValue(coursesMock);
