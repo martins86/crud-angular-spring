@@ -9,6 +9,14 @@ ports:
     port: 4200
     onOpen: open-browser
     visibility: public
+  - name: Testes Karma
+    port: 9222
+    onOpen: ignore
+    visibility: public
+  - name: Testes Karma
+    port: 9876
+    onOpen: ignore
+    visibility: public
   - name: GitPod
     port: 5900
     onOpen: ignore
