@@ -1,5 +1,5 @@
 export interface ErrorLog {
-    code: string;
+    code: number;
     message: string;
-    url: string;
+    url: string | null;
 }

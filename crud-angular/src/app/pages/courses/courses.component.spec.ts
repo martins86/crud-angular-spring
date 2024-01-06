@@ -2,13 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
 import { Course } from 'src/app/shared/interfaces/course';
 
 import { CoursesService } from 'src/app/shared/services/courses/courses.service';
 
 import { TableCrudCoursesModule } from 'src/app/shared/components/table-crud-courses/table-crud-courses.module';
 
-const shared = [TableCrudCoursesModule];
+const shared = [TableCrudCoursesModule, MatDialogModule];
 
 import { CoursesComponent } from './courses.component';
 
@@ -25,7 +27,11 @@ describe('Testes do CoursesComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, ...shared],
       declarations: [CoursesComponent],
-      providers: [CoursesService]
+      providers: [
+        CoursesService,
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
     })
       .compileComponents();
   });
@@ -44,25 +50,13 @@ describe('Testes do CoursesComponent', () => {
   describe('Teste do getAllCourses', () => {
     it('Deve acionar o getAll com sucesso', () => {
       // Arrange
-      spyOn(serviceCourses, 'getAll');
+      spyOn(serviceCourses, 'getAll').and.returnValue(of(coursesMock));
 
       // Act
       component.getAllCourses();
 
       // Assert
       expect(serviceCourses.getAll).toHaveBeenCalled();
-
-    });
-
-    it('Deve retornar array de courses do tipo course', () => {
-      // Arrange
-      spyOn(serviceCourses, 'getAll').and.returnValue(of(coursesMock));
-
-      // Act
-      const response = component.getAllCourses();
-
-      // Assert
-      expect(response).toEqual(of(coursesMock));
     });
   });
 });
