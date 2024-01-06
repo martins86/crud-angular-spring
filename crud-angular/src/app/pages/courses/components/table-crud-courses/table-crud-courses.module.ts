@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 const material = [MatTableModule, MatToolbarModule, MatIconModule];
 
 
-import { IconsCategoryPipe } from '../../pipes/icons-category/icons-category.pipe';
+import { IconsCategoryPipe } from '../../../../shared/pipes/icons-category/icons-category.pipe';
 
 const pipes = [IconsCategoryPipe];
 

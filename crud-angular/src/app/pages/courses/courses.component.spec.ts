@@ -8,7 +8,7 @@ import { Course } from 'src/app/shared/interfaces/course';
 
 import { CoursesService } from 'src/app/shared/services/courses/courses.service';
 
-import { TableCrudCoursesModule } from 'src/app/shared/components/table-crud-courses/table-crud-courses.module';
+import { TableCrudCoursesModule } from 'src/app/pages/courses/components/table-crud-courses/table-crud-courses.module';
 
 const shared = [TableCrudCoursesModule, MatDialogModule];
 
