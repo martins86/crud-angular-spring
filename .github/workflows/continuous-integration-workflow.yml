@@ -42,14 +42,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      - name: Start
+        run: cd crud-angular
+
       - name: Install dependencies
         if: success()
         run: |
           npm install
-
-      - name: Check commit message
-        if: success()
-        uses: wagoid/commitlint-github-action@v1
 
       - name: Build app
         if: success()
@@ -91,7 +90,10 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+            
+      - name: Start
+        run: cd crud-angular
+      
       - name: Install dependencies
         if: success()
         run: |
@@ -137,6 +139,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      - name: Start
+        run: cd crud-angular
+        
       - name: Install dependencies
         if: success()
         run: |
