@@ -1,177 +1,177 @@
-name: CI/CD
+# name: CI/CD
 
-on:
-  pull_request:
-    branches: [master]
-  push:
-    branches: [master]
-  schedule:
-    - cron: '0 9 * * 1,2,3,4,5'
+# on:
+#   pull_request:
+#     branches: [master]
+#   push:
+#     branches: [master]
+#   schedule:
+#     - cron: "0 9 * * 1,2,3,4,5"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      build_id: ${{ steps.build_step.outputs.build_id }}
-    strategy:
-      matrix:
-        node-version: [16.x]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     outputs:
+#       build_id: ${{ steps.build_step.outputs.build_id }}
+#     strategy:
+#       matrix:
+#         node-version: [16.x]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+#       - name: Set up Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+#       - name: Cache node modules
+#         id: cache-nodemodules
+#         uses: actions/cache@v3
+#         env:
+#           cache-name: cache-node-modules
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-build-${{ env.cache-name }}-
+#             ${{ runner.os }}-build-
+#             ${{ runner.os }}-
 
-      - name: Start
-        run: cd crud-angular
+#       - name: Start
+#         run: cd crud-angular
 
-      - name: Install dependencies
-        if: success()
-        run: |
-          npm install
+#       - name: Install dependencies
+#         if: success()
+#         run: |
+#           npm install
 
-      - name: Build app
-        if: success()
-        id: build_step
-        run: |
-          npm run build:ci
+#       - name: Build app
+#         if: success()
+#         id: build_step
+#         run: |
+#           npm run build:ci
 
-  check-lint:
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   check-lint:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    strategy:
-      matrix:
-        node-version: [16.x]
+#     strategy:
+#       matrix:
+#         node-version: [16.x]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+#       - name: Set up Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-            
-      - name: Start
-        run: cd crud-angular
-      
-      - name: Install dependencies
-        if: success()
-        run: |
-          npm install
+#       - name: Cache node modules
+#         id: cache-nodemodules
+#         uses: actions/cache@v3
+#         env:
+#           cache-name: cache-node-modules
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-build-${{ env.cache-name }}-
+#             ${{ runner.os }}-build-
+#             ${{ runner.os }}-
 
-      - name: Check Lint
-        if: success()
-        run: |
-          npm run lint
+#       - name: Start
+#         run: cd crud-angular
 
-  test-unit:
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Install dependencies
+#         if: success()
+#         run: |
+#           npm install
 
-    strategy:
-      matrix:
-        node-version: [16.x]
+#       - name: Check Lint
+#         if: success()
+#         run: |
+#           npm run lint
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+#   test-unit:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+#     strategy:
+#       matrix:
+#         node-version: [16.x]
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
 
-      - name: Start
-        run: cd crud-angular
-        
-      - name: Install dependencies
-        if: success()
-        run: |
-          npm install
+#       - name: Set up Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
 
-      - name: Test Unit with coverage
-        if: success()
-        run: |
-          npm run test:ci
+#       - name: Cache node modules
+#         id: cache-nodemodules
+#         uses: actions/cache@v3
+#         env:
+#           cache-name: cache-node-modules
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-build-${{ env.cache-name }}-
+#             ${{ runner.os }}-build-
+#             ${{ runner.os }}-
 
-      - name: Upload coverage in Coveralls
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Start
+#         run: cd crud-angular
 
-  deploy:
-    needs: [build, check-lint, test-unit]
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Install dependencies
+#         if: success()
+#         run: |
+#           npm install
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+#       - name: Test Unit with coverage
+#         if: success()
+#         run: |
+#           npm run test:ci
 
-      - name: Deploy to GitHub Pages
-        if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm install
-          npm run deploy:gh -- --name="martins86" --email="martins86@gmail.com" --no-silent
+#       - name: Upload coverage in Coveralls
+#         if: success()
+#         uses: coverallsapp/github-action@master
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+#   deploy:
+#     needs: [build, check-lint, test-unit]
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v1
+
+#       - name: Deploy to GitHub Pages
+#         if: success()
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           npm install
+#           npm run deploy:gh -- --name="martins86" --email="martins86@gmail.com" --no-silent
