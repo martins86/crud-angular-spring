@@ -3,12 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port=4200 --host=0.0.0.0 --disable-host-check --open",
+    "build": "ng build --configuration production --output-hashing=none --build-optimizer --optimization --vendor-chunk=false --aot",
+    "build:ci": "npm run build -- --base-href=./ --vendor-chunk=false --aot",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
+    "test:dev": "npm run test -- --progress --browsers Chrome",
+    "test:ci": "npm run test -- --no-watch --no-progress --browsers ChromeHeadlessNoSandbox",
     "prettier:write": "npx prettier --write --ignore-unknown .",
-    "prettier:check": "npx prettier --check ."
+    "prettier:check": "npx prettier --check .",
+    "pre-commit": "npx --no-install lint-staged",
+    "pre-push": "npm run test:ci",
+    "prepare": "husky",
+    "postinstall": "chmod ug+x .husky/*"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +36,7 @@
     "@angular/cli": "^17.3.1",
     "@angular/compiler-cli": "^17.3.0",
     "@types/jasmine": "~5.1.0",
+    "husky": "^9.0.11",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
