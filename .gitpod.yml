@@ -25,7 +25,6 @@ ports:
     onOpen: ignore
     visibility: public
 
-
 # Tarefas na Inicialização
 tasks:
   - name: Start front-end
