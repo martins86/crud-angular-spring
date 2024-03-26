@@ -1,6 +1,6 @@
 module.exports = function (config) {
   config.set({
-    basePath: './',
+    basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -19,6 +19,9 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true,
     },
+    files: [],
+    exclude: [],
+    preprocessors: {},
     // thresholds: {
     //   emitWarning: false,
     //   global: {
@@ -35,7 +38,7 @@ module.exports = function (config) {
     //   },
     // },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage'),
+      dir: require('path').join(__dirname, './coverage/poc-angular-17'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
       fixWebpackSourcePaths: true,
@@ -43,9 +46,9 @@ module.exports = function (config) {
     reporters: ['progress', 'kjhtml', 'spec'],
     port: 9876,
     colors: true,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false,
     restartOnFileChange: true,
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
@@ -81,5 +84,7 @@ module.exports = function (config) {
       },
     },
     logLevel: config.LOG_INFO,
+    singleRun: false,
+    concurrency: Infinity,
   });
 };
