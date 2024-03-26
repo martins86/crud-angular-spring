@@ -112,11 +112,11 @@ jobs:
         run: |
           npm run test:ci
 
-      - name: Upload coverage in Coveralls
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Upload coverage in Coveralls
+      #   if: success()
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: [build, test-unit]
