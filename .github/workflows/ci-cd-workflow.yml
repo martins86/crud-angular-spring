@@ -102,9 +102,6 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Start
-        run: cd crud-angular
-
       - name: Install dependencies
         if: success()
         run: |
