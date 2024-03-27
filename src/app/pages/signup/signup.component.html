@@ -1,7 +1,7 @@
 <app-login-default
-  title="Sign in and start today!"
-  primaryBtnText="Signup Now"
-  secondaryBtnText="Login Now"
+  description="Registrar-se MoveIt!"
+  primaryBtnText="Registrar-se"
+  secondaryBtnText="Já tenho Acesso"
   (submit)="submit()"
   (navigate)="navigate()"
   [disablePrimaryBtn]="!signupForm.valid">
@@ -10,31 +10,31 @@
       formControlName="name"
       inputName="name"
       type="text"
-      label="Your name"
+      label="Nome completo"
       placeholder="John Doe">
-      <img src="/assets/icons/email-icon.svg" alt="" />
+      <img src="/assets/icons/person-icon.svg" alt="icon pessoa" />
     </app-input-string>
     <app-input-string
       formControlName="email"
       inputName="email"
       type="email"
-      label="Email"
+      label="E-mail"
       placeholder="johndoe@gmail.com">
-      <img src="/assets/icons/email-icon.svg" alt="" />
+      <img src="/assets/icons/email-icon.svg" alt="icon email" />
     </app-input-string>
     <app-input-string
       formControlName="password"
       inputName="password"
       type="password"
-      label="Your Password">
-      <img src="/assets/icons/password-icon.svg" alt="" />
+      label="Senha">
+      <img src="/assets/icons/password-icon.svg" alt="icon password" />
     </app-input-string>
     <app-input-string
       formControlName="passwordConfirm"
       inputName="passwordConfirm"
       type="password"
-      label="Confirm your Password">
-      <img src="/assets/icons/password-icon.svg" alt="" />
+      label="Confirmar senha">
+      <img src="/assets/icons/password-icon.svg" alt="icon password" />
     </app-input-string>
   </form>
 </app-login-default>

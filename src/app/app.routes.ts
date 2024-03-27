@@ -8,12 +8,12 @@ import { SignupComponent } from '@pages/signup/signup.component';
 export const routes: Routes = [
   {
     path: 'login',
-    title: 'Login',
+    title: 'Acessar',
     component: LoginComponent,
   },
   {
     path: 'signup',
-    title: 'Signup',
+    title: 'Registrar-se',
     component: SignupComponent,
   },
   {

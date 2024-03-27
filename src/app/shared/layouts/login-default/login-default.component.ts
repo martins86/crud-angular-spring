@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './login-default.component.scss',
 })
 export class LoginDefaultComponent {
-  @Input() title: string = '';
+  @Input() description: string = '';
   @Input() primaryBtnText: string = '';
   @Input() secondaryBtnText: string = '';
   @Input() disablePrimaryBtn: boolean = true;
