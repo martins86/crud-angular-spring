@@ -1,5 +1,5 @@
 <app-login-default
-  description="Acessar MoveIt!"
+  description="Acessar Poc!"
   primaryBtnText="Acessar"
   secondaryBtnText="Registre-se"
   (submit)="submit()"
@@ -12,15 +12,31 @@
       type="email"
       label="E-mail"
       placeholder="johndoe@gmail.com">
-      <img src="./assets/icons/email-icon.svg" alt="icon e-mail" />
+      <span
+        aria-label="icone e-mail"
+        role="img"
+        class="material-symbols-outlined">
+        mail
+      </span>
     </app-input-string>
     <app-input-string
       formControlName="password"
       inputName="password"
       type="password"
       label="Senha">
-      <img src="./assets/icons/password-icon.svg" alt="icon password" />
+      <span
+        aria-label="icone chave de acesso"
+        role="img"
+        class="material-symbols-outlined">
+        passkey
+      </span>
     </app-input-string>
-    <span>Recuperar Senha</span>
+    <button
+      class="btn-link"
+      type="button"
+      aria-label="Recuperar Senha"
+      text="Recuperar Senha">
+      Recuperar Senha
+    </button>
   </form>
 </app-login-default>

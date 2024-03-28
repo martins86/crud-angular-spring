@@ -1,27 +1,41 @@
-<main>
+<main role="main">
   <section class="form-section">
-    <img src="./assets/images/logo.svg" alt="logo MoveIt" />
+    <img
+      tabindex="0"
+      loading="lazy"
+      src="./assets/images/logo-angular-mini.svg"
+      alt="Logo Angular Mini" />
     <h2>{{ description }}</h2>
     <ng-content></ng-content>
     <div class="btn-wrapper">
       <button
-        class="btn-primary"
+        class="btn-primary bg-linear-gradient"
+        [attr.aria-label]="primaryBtnText"
+        [attr.text]="primaryBtnText"
         (click)="submit()"
         [disabled]="disablePrimaryBtn">
         {{ primaryBtnText }}
       </button>
       <div class="divider">
-        <div></div>
+        <div class="line bg-linear-gradient"></div>
         <span>ou</span>
-        <div></div>
+        <div class="line bg-linear-gradient"></div>
       </div>
-      <button class="btn-secondary" (click)="navigate()">
+      <button
+        class="btn-secondary border-gradient"
+        [attr.aria-label]="secondaryBtnText"
+        [attr.text]="secondaryBtnText"
+        (click)="navigate()">
         {{ secondaryBtnText }}
       </button>
     </div>
   </section>
   <section class="main-section">
-    <h1>Você deve MoveIt!</h1>
-    <img src="./assets/images/main-illustration.svg" alt="ilustração MoveIt" />
+    <h1>Poc com Angular 17!</h1>
+    <img
+      tabindex="0"
+      loading="lazy"
+      src="./assets/images/logo-angular-full.svg"
+      alt="Logo Angular full" />
   </section>
 </main>

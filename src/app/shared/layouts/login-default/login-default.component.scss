@@ -21,6 +21,7 @@ main {
 
     img {
       margin-bottom: 30px;
+      width: 25%;
     }
 
     h2 {
@@ -46,14 +47,13 @@ main {
         width: 100%;
 
         font-size: 14px;
-        color: $primary-bg;
+        color: $primary-color;
         font-weight: 400;
         text-transform: uppercase;
 
-        div {
+        .line {
           flex-grow: 1;
           height: 2px;
-          background-color: $primary-bg;
         }
       }
 
@@ -62,14 +62,12 @@ main {
         border-radius: 8px;
         font-size: 16px;
         font-weight: 500;
-        border: none;
-        background: transparent;
         padding: 12px 24px;
         cursor: pointer;
 
         &.btn-primary {
-          background-color: $primary-color;
           color: white;
+          border: none;
           box-shadow: 0px 8px 12px
             rgba(
               148.23004603385925,
@@ -85,7 +83,6 @@ main {
         }
 
         &.btn-secondary {
-          border: 1px solid $primary-color;
           color: $primary-color;
         }
       }
@@ -99,7 +96,7 @@ main {
     background-color: $primary-bg;
 
     img {
-      max-width: 100%;
+      max-width: 80%;
       height: auto;
     }
   }

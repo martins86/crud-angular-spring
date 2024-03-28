@@ -16,12 +16,12 @@
 
     .icon {
       padding: 12px;
-      background-color: $primary-color;
       border-radius: 0 8px 8px 0;
-
-      img {
-        height: 20px;
-      }
+      background: linear-gradient(
+        90deg,
+        rgb(151, 23, 231) 0%,
+        rgb(108, 0, 245) 100%
+      );
     }
 
     input {

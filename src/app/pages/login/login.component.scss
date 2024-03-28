@@ -8,9 +8,19 @@ form {
   margin-bottom: 34px;
 
   span {
-    font-size: 14px;
-    text-decoration: underline;
-    color: $secondary-color;
-    text-align: end;
+    font-size: 1.6rem;
+    color: white;
+  }
+
+  .btn-link {
+    border: none;
+    background: transparent;
+    width: fit-content;
+    cursor: pointer;
+    color: $primary-color;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }

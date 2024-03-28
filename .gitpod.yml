@@ -1,3 +1,4 @@
+---
 # Imagem Docker
 image:
   file: .gitpod.Dockerfile
@@ -54,3 +55,4 @@ vscode:
     - hbenl.test-adapter-converter
     - hbenl.vscode-test-explorer
     - vscjava.vscode-java-test
+    - jock.svg
