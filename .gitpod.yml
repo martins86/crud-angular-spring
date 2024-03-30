@@ -56,3 +56,6 @@ vscode:
     - hbenl.vscode-test-explorer
     - vscjava.vscode-java-test
     - jock.svg
+    - Angular.ng-template
+    - cyrilletuzi.angular-schematics
+    - Mikael.Angular-BeastCode

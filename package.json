@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --port=4200 --host=0.0.0.0 --disable-host-check --open",
     "build": "ng build --configuration production --output-hashing=none --optimization --aot",
-    "build:ci": "npm run build -- --base-href=/poc-angular-17/",
+    "build:ci": "npm run build -- --base-href=/.",
     "deploy:gh": "ng deploy --base-href=/poc-angular-17/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage",

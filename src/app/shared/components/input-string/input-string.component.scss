@@ -1,31 +1,28 @@
-@import '../../../../assets/styles/variables.scss';
+@import 'variables.scss';
 
 .input-wrapper {
-  color: $text-color;
+  color: $color-text-primary;
   font-size: 16px;
   text-align: start;
 
   .input-content {
     width: 100%;
     border-radius: 8px;
-    margin: 8px 0;
+    margin: 8px 0 0;
     display: flex;
 
     .icon {
+      display: flex;
       padding: 12px;
       border-radius: 0 8px 8px 0;
-      background: linear-gradient(
-        90deg,
-        rgb(151, 23, 231) 0%,
-        rgb(108, 0, 245) 100%
-      );
+      background: $bg-linear-gradient-a;
     }
 
     input {
       border: none;
       border-radius: 8px 0 0 8px;
-      background-color: $secondary-bg;
-      padding: 12px 0 12px 20px;
+      background-color: $color-bg-secondary;
+      padding: 8px 0 8px 12px;
       width: 100%;
     }
   }
