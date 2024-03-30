@@ -11,6 +11,7 @@
       inputName="name"
       type="text"
       label="Nome completo"
+      titleLabel="Digite seu nome completo"
       placeholder="John Doe">
       <span
         aria-label="icone pessoa"
@@ -24,6 +25,7 @@
       inputName="email"
       type="email"
       label="E-mail"
+      titleLabel="Digite seu e-mail"
       placeholder="johndoe@gmail.com">
       <span
         aria-label="icone e-mail"
@@ -36,24 +38,26 @@
       formControlName="password"
       inputName="password"
       type="password"
-      label="Senha">
+      label="Senha"
+      titleLabel="Digite sua senha">
       <span
-        aria-label="icone chave de acesso"
+        aria-label="icone password"
         role="img"
         class="material-symbols-outlined">
-        passkey
+        password
       </span>
     </app-input-string>
     <app-input-string
       formControlName="passwordConfirm"
       inputName="passwordConfirm"
       type="password"
-      label="Confirmar senha">
+      label="Confirmar senha"
+      titleLabel="Confirme sua senha">
       <span
-        aria-label="icone chave de acesso"
+        aria-label="icone password"
         role="img"
         class="material-symbols-outlined">
-        passkey
+        password
       </span>
     </app-input-string>
   </form>

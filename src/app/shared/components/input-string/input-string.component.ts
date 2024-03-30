@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-import { InputStringTypes } from '../../types/login-response.type';
+import { InputStringTypes } from '@core/types/login-response.type';
 
 @Component({
   selector: 'app-input-string',
@@ -26,6 +26,7 @@ export class InputStringComponent implements ControlValueAccessor {
   @Input() type: InputStringTypes = 'text';
   @Input() placeholder: string = '';
   @Input() label: string = '';
+  @Input() titleLabel: string = '';
   @Input() inputName: string = '';
 
   value: string = '';

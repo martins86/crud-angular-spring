@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/variables.scss';
+@import '../../../../../assets/styles/variables.scss';
 
 main {
   display: flex;
@@ -98,6 +98,14 @@ main {
     img {
       max-width: 80%;
       height: auto;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    .main-section {
+      display: none;
     }
   }
 }

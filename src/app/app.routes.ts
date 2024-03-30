@@ -2,24 +2,11 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, Routes, TitleStrategy } from '@angular/router';
 
-import { LoginComponent } from '@pages/login/login.component';
-import { SignupComponent } from '@pages/signup/signup.component';
-
 export const routes: Routes = [
   {
-    path: 'login',
-    title: 'Acessar',
-    component: LoginComponent,
-  },
-  {
-    path: 'signup',
-    title: 'Registrar-se',
-    component: SignupComponent,
-  },
-  {
     path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
+    loadChildren: () =>
+      import('@pages/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 ];
 
