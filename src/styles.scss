@@ -38,17 +38,3 @@ body {
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e40035",endColorstr="#6c00f5",GradientType=1);
 }
-
-.border-gradient {
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(
-        to left,
-        $color-option-a 0%,
-        $color-option-b 37%,
-        $color-option-c 74%,
-        $color-option-d 100%
-      )
-      border-box;
-  border: 1px solid transparent;
-}

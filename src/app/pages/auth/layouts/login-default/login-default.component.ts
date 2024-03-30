@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'app-login-default',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './login-default.component.html',
   styleUrl: './login-default.component.scss',
 })

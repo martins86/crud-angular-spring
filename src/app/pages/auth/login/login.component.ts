@@ -16,11 +16,17 @@ import { LoginService } from '@services/login/login.service';
 
 import { InputStringComponent } from '@components/input-string/input-string.component';
 import { LoginDefaultComponent } from '@pages/auth/layouts/login-default/login-default.component';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, InputStringComponent, LoginDefaultComponent],
+  imports: [
+    ReactiveFormsModule,
+    ButtonComponent,
+    InputStringComponent,
+    LoginDefaultComponent,
+  ],
   providers: [LoginService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
