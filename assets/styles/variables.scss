@@ -1,12 +1,17 @@
-$text-color: #555555;
-$primary-color: #6c00f5;
-$primary-bg: #eeeeee;
-$secondary-color: #e40035;
-$secondary-bg: #f1f3f6;
+$color-option-a: rgba(228, 0, 53, 1);
+$color-option-b: rgba(220, 8, 125, 1);
+$color-option-c: rgba(151, 23, 231, 1);
+$color-option-d: rgba(106, 0, 245, 1);
 
-$primary-text-color: #6c00f5;
-$secondary-text-color: #e40035;
-$tertiary-text-color: #555555;
+$color-text-primary: #555555;
+$color-text-secondary: #e40035;
+$color-link: #6a00f5;
 
-$primary-bg-color: #f1f3f6;
-$secondary-bg-color: #f1f3f6;
+$color-bg-primary: #eeeeee;
+$color-bg-secondary: #f1f3f6;
+
+$bg-linear-gradient-a: linear-gradient(
+  90deg,
+  rgb(151, 23, 231) 0%,
+  rgb(108, 0, 245) 100%
+);
