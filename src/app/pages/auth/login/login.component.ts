@@ -14,9 +14,11 @@ import { LoginForm } from '@interfaces/login-form.interface';
 
 import { LoginService } from '@services/login/login.service';
 
-import { InputStringComponent } from '@components/input-string/input-string.component';
-import { LoginDefaultComponent } from '@pages/auth/layouts/login-default/login-default.component';
 import { ButtonComponent } from '@components/button/button.component';
+import { InputStringComponent } from '@components/input-string/input-string.component';
+import { InputComponent } from '@components/input/input.component';
+
+import { LoginDefaultComponent } from '@pages/auth/layouts/login-default/login-default.component';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +28,7 @@ import { ButtonComponent } from '@components/button/button.component';
     ButtonComponent,
     InputStringComponent,
     LoginDefaultComponent,
+    InputComponent,
   ],
   providers: [LoginService],
   templateUrl: './login.component.html',

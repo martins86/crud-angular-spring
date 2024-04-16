@@ -1,0 +1,7 @@
+:host {
+  text-align: center;
+
+  &:disabled {
+    opacity: 0.9;
+  }
+}
