@@ -1,0 +1,25 @@
+.bg-linear-gradient {
+  background: $color-option-a;
+  background: -moz-linear-gradient(
+    90deg,
+    $color-option-a 0%,
+    $color-option-b 37%,
+    $color-option-c 74%,
+    $color-option-d 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    $color-option-a 0%,
+    $color-option-b 37%,
+    $color-option-c 74%,
+    $color-option-d 100%
+  );
+  background: linear-gradient(
+    90deg,
+    $color-option-a 0%,
+    $color-option-b 37%,
+    $color-option-c 74%,
+    $color-option-d 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e40035",endColorstr="#6c00f5",GradientType=1);
+}
