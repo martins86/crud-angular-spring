@@ -1,0 +1,66 @@
+<main class="content" role="main">
+  <section class="left-section">
+    <img
+      class="img-logo-mini"
+      tabindex="0"
+      loading="lazy"
+      src="./assets/images/logo-angular-mini.svg"
+      alt="Logo Angular" />
+    <h1 class="title">Poc Angular 17</h1>
+    <form [formGroup]="loginForm">
+      <app-input-string
+        formControlName="email"
+        inputName="email"
+        type="email"
+        label="E-mail"
+        titleLabel="Digite seu e-mail"
+        placeholder="johndoe@gmail.com">
+        <span
+          aria-label="icone e-mail"
+          role="img"
+          class="material-symbols-outlined">
+          mail
+        </span>
+      </app-input-string>
+      <app-input-string
+        formControlName="password"
+        inputName="password"
+        type="password"
+        titleLabel="Digite sua senha"
+        label="Senha"
+        placeholder="*******">
+        <span
+          aria-label="icone password"
+          role="img"
+          class="material-symbols-outlined">
+          password
+        </span>
+      </app-input-string>
+    </form>
+
+    <div class="btn-wrapper">
+      <app-button
+        idBtn="entrar"
+        classBtn="btn-primary"
+        typeBtn="button"
+        [ariaLabelBtn]="'Acessar o App'"
+        [disableBtn]="!loginForm.valid">
+        Acessar
+      </app-button>
+      <div class="divider">
+        <div class="line bg-linear-gradient"></div>
+        <span>ou</span>
+        <div class="line bg-linear-gradient"></div>
+      </div>
+    </div>
+  </section>
+  <section class="right-section">
+    <h2 class="text-description">Poc com Angular 17</h2>
+    <img
+      class="img-logo-full"
+      tabindex="0"
+      loading="lazy"
+      src="./assets/images/logo-angular-full.svg"
+      alt="Logo com a escrita Angular" />
+  </section>
+</main>

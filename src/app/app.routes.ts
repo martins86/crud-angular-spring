@@ -2,7 +2,18 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, Routes, TitleStrategy } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('@pages/login/login.routes').then((m) => m.LOGIN_ROUTES),
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+];
 
 /**
  * Customizando title da pagina por URL.
