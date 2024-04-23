@@ -7,7 +7,7 @@
       src="./assets/images/logo-angular-mini.svg"
       alt="Logo Angular" />
     <h1 class="title">Poc Angular 17</h1>
-    <form [formGroup]="loginForm">
+    <form class="form-login" [formGroup]="loginForm">
       <app-input-string
         formControlName="email"
         inputName="email"
@@ -36,17 +36,17 @@
           password
         </span>
       </app-input-string>
-    </form>
 
-    <div class="btn-wrapper">
       <app-button
         idBtn="entrar"
         classBtn="btn-primary"
         typeBtn="button"
-        [ariaLabelBtn]="'Acessar o App'"
-        [disableBtn]="!loginForm.valid">
+        [ariaLabelBtn]="'Acessar o App'">
         Acessar
       </app-button>
+    </form>
+
+    <div class="btn-wrapper">
       <div class="divider">
         <div class="line bg-linear-gradient"></div>
         <span>ou</span>

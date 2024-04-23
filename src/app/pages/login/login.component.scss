@@ -24,9 +24,9 @@ section {
   background-color: $color-white;
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 45px;
+    margin-bottom: 36px;
   }
 
   .img-logo-mini {
@@ -34,12 +34,12 @@ section {
     width: 20%;
   }
 
-  form {
+  .form-login {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 34px;
+    gap: 30px;
+    margin-bottom: 22px;
 
     span {
       font-size: 1.6rem;
