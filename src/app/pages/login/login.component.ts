@@ -6,15 +6,12 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { ButtonComponent } from '@components/button/button.component';
-import { InputStringComponent } from '@components/input-string/input-string.component';
-
 import { ILoginForm } from '@core/interfaces/login-form.interface';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, ButtonComponent, InputStringComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
