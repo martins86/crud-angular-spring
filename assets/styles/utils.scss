@@ -1,4 +1,4 @@
-.bg-linear-gradient {
+.bg__linear-gradient {
   background: $color-option-a;
   background: -moz-linear-gradient(
     90deg,
@@ -22,4 +22,38 @@
     $color-option-d 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e40035",endColorstr="#6c00f5",GradientType=1);
+}
+
+.btn {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.btn__primary {
+  color: $color-white;
+  border: none;
+  box-shadow: 0px 8px 12px
+    rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
+}
+
+.btn__secondary {
+  color: $color-link;
+}
+
+.btn__link {
+  border: none;
+  background: transparent;
+  width: fit-content;
+  cursor: pointer;
+  color: $color-link;
+}
+
+.btn__primary:hover,
+.btn__secondary:hover,
+.btn__link {
+  opacity: 0.8;
 }
