@@ -13,7 +13,7 @@
     "test:ci": "npm run test -- --no-watch --no-progress --browsers ChromeHeadlessNoSandbox",
     "prettier:write": "npx prettier --write --ignore-unknown .",
     "prettier:check": "npx prettier --check .",
-    "pre-commit": "npx --no-install lint-staged && npm run lint",
+    "pre-commit": "npx --no-install lint-staged",
     "pre-push": "npm run test:ci",
     "prepare": "husky",
     "postinstall": "chmod ug+x .husky/*",

@@ -1,65 +1,64 @@
-<main class="content" role="main">
-  <section class="left-section">
-    <img
-      class="img-logo-mini"
-      tabindex="0"
-      src="./assets/images/logo-angular-mini.svg"
-      alt="Logo Angular" />
-    <h1 class="title">Poc Angular 17</h1>
-    <form class="form-login" [formGroup]="loginForm">
-      <app-input-string
-        formControlName="email"
-        inputName="email"
-        type="email"
-        label="E-mail"
-        titleLabel="Digite seu e-mail"
-        placeholder="johndoe@gmail.com">
-        <span
-          aria-label="icone e-mail"
-          role="img"
-          class="material-symbols-outlined">
-          mail
-        </span>
-      </app-input-string>
-      <app-input-string
-        formControlName="password"
-        inputName="password"
-        type="password"
-        titleLabel="Digite sua senha"
-        label="Senha"
-        placeholder="*******">
-        <span
-          aria-label="icone password"
-          role="img"
-          class="material-symbols-outlined">
-          password
-        </span>
-      </app-input-string>
+<main class="content-login">
+  <section class="content-login__left">
+    <header>
+      <figure>
+        <img
+          class="content-login__left--logo"
+          src="./assets/images/logo-angular-mini.svg"
+          alt="Logomarca Angular" />
+      </figure>
+      <h1 class="content-login__left--title">Poc Angular 17</h1>
+    </header>
 
-      <app-button
-        idBtn="entrar"
-        classBtn="btn-primary"
-        typeBtn="button"
-        [ariaLabelBtn]="'Acessar o App'">
+    <form class="content-login__left--form" [formGroup]="loginForm">
+      <fieldset>
+        <label for="email">E-mail:</label>
+        <div class="input-with-icon">
+          <input
+            formControlName="email"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="johndoe@gmail.com" />
+          <span
+            aria-label="icone e-mail"
+            role="img"
+            class="material-symbols-outlined">
+            mail
+          </span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label for="password">Senha:</label>
+        <div class="input-with-icon">
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="*******" />
+          <span
+            aria-label="icone password"
+            role="img"
+            class="material-symbols-outlined">
+            password
+          </span>
+        </div>
+      </fieldset>
+
+      <button class="btn btn__primary bg__linear-gradient" type="button">
         Acessar
-      </app-button>
+      </button>
     </form>
-
-    <div class="btn-wrapper">
-      <div class="divider">
-        <div class="line bg-linear-gradient"></div>
-        <span>ou</span>
-        <div class="line bg-linear-gradient"></div>
-      </div>
-    </div>
   </section>
-  <section class="right-section">
-    <h2 class="text-description">Poc com Angular 17</h2>
-    <img
-      class="img-logo-full"
-      tabindex="0"
-      loading="lazy"
-      src="./assets/images/logo-angular-full.svg"
-      alt="Logo com a escrita Angular" />
+
+  <section class="content-login__right">
+    <h2 class="content-login__right--title">Poc com Angular 17</h2>
+    <figure>
+      <img
+        class="content-login__right--logo"
+        src="./assets/images/logo-angular-full.svg"
+        alt="Logomarca com a escrita Angular" />
+    </figure>
   </section>
 </main>
