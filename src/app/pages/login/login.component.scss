@@ -33,14 +33,21 @@
   background-color: $color-white;
 }
 
+.content-login__left header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .content-login__left--logo {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
+  max-width: 80%;
 }
 
 .content-login__left--title {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 36px;
+  margin-bottom: 1.6rem;
 }
 
 .content-login__left--form {
@@ -73,7 +80,7 @@
   border-radius: 0 8px 8px 0;
   background: $bg__linear-gradient-a;
   font-size: 1.6rem;
-  color: white;
+  color: $color-white;
 }
 
 .content-login__left--form input {
