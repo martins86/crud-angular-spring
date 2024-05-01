@@ -52,6 +52,50 @@
   color: $color-link;
 }
 
+.btn__google {
+  border: 0.1rem;
+  border-style: solid;
+  border-color: $color-link;
+  color: $color-link;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  svg {
+    height: 1.6rem;
+  }
+
+  span {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}
+
+.btn__google {
+  border: 0.1rem;
+  border-style: solid;
+  border-color: $color-link;
+  color: $color-link;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn__google svg {
+  height: 1.6rem;
+}
+
+.btn__google span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .btn__primary:hover,
 .btn__secondary:hover,
 .btn__link {
