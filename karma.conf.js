@@ -38,7 +38,7 @@ module.exports = function (config) {
     //   },
     // },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/poc-angular-17'),
+      dir: require('path').join(__dirname, './coverage/poc-angular-releases'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
       fixWebpackSourcePaths: true,
